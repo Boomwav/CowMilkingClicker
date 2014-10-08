@@ -33,6 +33,10 @@ module.exports = function (grunt) {
         files: ['bower.json'],
         tasks: ['wiredep']
       },
+	  coffee: {
+		files: ['<%= yeoman.app %>/coffeescripts/{,*/}*.coffee'],
+		tasks: ['newer:coffee:compile']
+	  },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all'],
@@ -109,6 +113,23 @@ module.exports = function (grunt) {
         }
       }
     },
+	
+	// Create JS files from CoffeeScript
+	coffee: {
+		compile: {
+			options: {
+				bare: true,
+				flatten: false
+			},
+			files: [{
+				expand: true,
+				cwd: '<%= yeoman.app %>/coffeescripts/',
+				src: '**/*.coffee',
+				dest: '<%= yeoman.app %>/scripts/compiled',
+				ext: '.js'
+			}]
+		}
+	},
 
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
