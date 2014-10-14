@@ -28,4 +28,6 @@ angular.module('cowMilkingClickerApp')
 		Game.model = localStorageService.get('game');
 	}
 	
+	var timer = setInterval(function() {Game.tick(100); $scope.$apply()}, 100);
+	
   });

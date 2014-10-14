@@ -8,12 +8,17 @@ angular.module('cowMilkingClickerApp').factory 'Game', ['Log', (Log) ->
 				milkQty: 0
 				money: 0
 		
-		addMilk: (milkQtyToAdd) ->
+		addMilk: (milkQtyToAdd, useLog = true) ->
 			@model.milkQty += milkQtyToAdd
-			Log.addMessage "You milked your cows and gathered #{ milkQtyToAdd }ml of milk."
+			
+			if useLog
+				Log.addMessage "You milked your cows and gathered #{ milkQtyToAdd }ml of milk."
 			
 		addCow: (nbCowsToAdd) ->
 			@model.nbCows += nbCowsToAdd
 			plural = nbCowsToAdd > 1
 			Log.addMessage "You added #{ nbCowsToAdd } cow#{ if plural then 's' else '' } to your heard!"
+			
+		tick: (tickTime) ->
+			@addMilk (0.01 / 1000 * tickTime),false
 ]
