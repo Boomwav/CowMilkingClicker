@@ -13,6 +13,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/log.css">
     <!-- endbuild -->
   </head>
   <body ng-app="cowMilkingClickerApp">
@@ -21,14 +22,14 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
+    <div class="container-fluid">
       <div class="header">
         <ul class="nav nav-pills pull-right">
           <li class="active"><a ng-href="#">Home</a></li>
           <li><a ng-href="#/about">About</a></li>
           <li><a ng-href="#">Contact</a></li>
         </ul>
-        <h3 class="text-muted">cowMilkingClicker</h3>
+        <h3 class="text-muted">Cow Milking Clicker</h3>
       </div>
 
       <div ng-view=""></div>
@@ -70,8 +71,14 @@
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
+		
+		<script src="scripts/filters/reverse.coffee.js"></script>
+		
+		<script src="scripts/model/log.coffee.js"></script>
+		<script src="scripts/model/game.coffee.js"></script>
+		<script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/about.js"></script>
+		
         <!-- endbuild -->
 </body>
 </html>

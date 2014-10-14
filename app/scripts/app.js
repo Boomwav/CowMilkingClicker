@@ -8,7 +8,8 @@
  *
  * Main module of the application.
  */
-angular
+
+var app = angular
   .module('cowMilkingClickerApp', [
     'ngAnimate',
     'ngRoute',

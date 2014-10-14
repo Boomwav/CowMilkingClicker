@@ -34,7 +34,7 @@ module.exports = function (grunt) {
         tasks: ['wiredep']
       },
 	  coffee: {
-		files: ['<%= yeoman.app %>/coffeescripts/{,*/}*.coffee'],
+		files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
 		tasks: ['newer:coffee:compile']
 	  },
       js: {
@@ -119,7 +119,8 @@ module.exports = function (grunt) {
 		compile: {
 			options: {
 				bare: true,
-				flatten: false
+				flatten: false,
+				sourceMap: true
 			},
 			files: [{
 				expand: true,
