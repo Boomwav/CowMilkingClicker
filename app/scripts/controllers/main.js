@@ -14,7 +14,7 @@ angular.module('cowMilkingClickerApp')
       'AngularJS',
       'Karma'
     ];
-	
+	   
 	$scope.game = Game;
 	$scope.log = Log;
 		

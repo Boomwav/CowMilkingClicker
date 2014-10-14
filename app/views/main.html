@@ -6,13 +6,13 @@
 	</div>
 	
 	<div class="col-md-4">
-		<p><button ng-Click="game.addMilk(1)">Add Milk</button></p>
-		<p><button ng-Click="game.addCow(1)">Add a Cow</button></p>
-		<p><button ng-Click="game.addCow(2)">Add two Cows</button></p>
-		<p><button ng-Click="game.addSellerContract(10,1)">Hire Delivery Boy</button></p>
+		<p><button class="btn" ng-Click="game.addMilk(1)" data-placement="right" title="Title" data-content="{{game.model}}" data-trigger="hover" data-delay="100" data-animation="am-flip-x" data-template="views/popover/testPopover.html" bs-popover>Add Milk</button></p>
+		<p><button class="btn" ng-Click="game.addCow(1)">Add a Cow</button></p>
+		<p><button class="btn" ng-Click="game.addCow(2)">Add two Cows</button></p>
+		<p><button class="btn" ng-Click="game.addSellerContract(10,1)">Hire Delivery Boy</button></p>
 		<br><br>
-		<p><button ng-Click="save()">Save</button></p>
-		<p><button ng-Click="load()">Load</button></p>
+		<p><button class="btn" ng-Click="save()">Save</button></p>
+		<p><button class="btn" ng-Click="load()">Load</button></p>
 	</div>
 	
 	<div class="col-md-4">

@@ -14,6 +14,7 @@ var app = angular
 	'ngAnimate',
 	'ngRoute',
 	'ngTouch',
+	'mgcrea.ngStrap',
 	'LocalStorageModule'
 	])
 	.config(function ($routeProvider, localStorageServiceProvider) {
