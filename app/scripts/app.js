@@ -10,22 +10,25 @@
  */
 
 var app = angular
-  .module('cowMilkingClickerApp', [
-    'ngAnimate',
-    'ngRoute',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+	.module('cowMilkingClickerApp', [
+	'ngAnimate',
+	'ngRoute',
+	'ngTouch',
+	'LocalStorageModule'
+	])
+	.config(function ($routeProvider, localStorageServiceProvider) {
+		$routeProvider
+			.when('/', {
+				templateUrl: 'views/main.html',
+				controller: 'MainCtrl'
+			})
+			.when('/about', {
+				templateUrl: 'views/about.html',
+				controller: 'AboutCtrl'
+			})
+			.otherwise({
+				redirectTo: '/'
+			});
+		  
+		localStorageServiceProvider.setPrefix('cowMilkingClickerApp');		
+	});

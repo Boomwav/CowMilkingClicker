@@ -1,8 +1,8 @@
 <div class="row">
 	<div class="col-md-4">
-		<p>Money: {{game.money}}</p>
-		<p>Milk Qty: {{game.milkQty}}</p>
-		<p>Cows: {{game.nbCows}}</p>
+		<p>Money: {{game.model.money}}</p>
+		<p>Milk Qty: {{game.model.milkQty}}</p>
+		<p>Cows: {{game.model.nbCows}}</p>
 	</div>
 	
 	<div class="col-md-4">
@@ -10,6 +10,9 @@
 		<p><button ng-Click="game.addCow(1)">Add a Cow</button></p>
 		<p><button ng-Click="game.addCow(2)">Add two Cows</button></p>
 		<p><button ng-Click="game.addSellerContract(10,1)">Hire Delivery Boy</button></p>
+		<br><br>
+		<p><button ng-Click="save()">Save</button></p>
+		<p><button ng-Click="load()">Load</button></p>
 	</div>
 	
 	<div class="col-md-4">
