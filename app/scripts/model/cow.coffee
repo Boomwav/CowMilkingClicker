@@ -24,20 +24,37 @@ angular.module('cowMilkingClickerApp').factory 'Cow', ->
 				totalMilkProduced: 0
 				
 				state: 'pasture'
+			
+		eat: ->
+			@model.hunger -= (@model.eatingSpeed / 1000 * @tickTime)
+			clampHunger
+			
+		digest: ->
+			@model.hunger += (@model.digestingSpeed / 1000 * @tickTime)
+			clampHunger
+			
+		gotoPen: ->	@model.state = 'pen'
+		gotoPasture: -> @model.state = 'pasture'
+			
+		inPen: -> @model.state == 'pen'
+		inPasture: -> @model.state == 'pasture'
+			
+		hungry: -> @model.hunger > 0
+		full: -> @model.hunger >= maxHunger
+		
+		clampHunger: ->
+			if @model.hunger <= 0
+				@model.hunger = 0
+			if @model.hunger >= @model.maxHunger
+				@model.hunger = @model.maxHunger
 				
 		tick: (tickTime) ->
-			if @model.state == 'pasture'
-				@model.hunger -= (@model.eatingSpeed / 1000 * tickTime)
-				
-				if @model.hunger <= 0
-					@model.hunger = 0
-					@model.state = 'pen'
-					
-			if @model.state == 'pen'
-				@model.hunger += (@model.digestingSpeed / 1000 * tickTime)
-				
-				if @model.hunger >= @model.maxHunger
-					@model.hunger = @model.maxHunger
-					@model.state = 'pasture'
+			@tickTime = tickTime
+		
+			if inPasture then eat
+				if not hungry then gotoPen
+			
+			if inPen then digest()
+				if full then gotoPasture
 					
 				
