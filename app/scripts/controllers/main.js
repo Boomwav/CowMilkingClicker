@@ -17,6 +17,8 @@ angular.module('cowMilkingClickerApp')
 	   
 	$scope.game = Game;
 	$scope.log = Log;
+	
+	//$scope.showWarning = Game.milkQty >= 5;
 		
 	$scope.save = function() {
 		Log.addMessage("Game Saved...");
@@ -28,6 +30,12 @@ angular.module('cowMilkingClickerApp')
 		Game.model = localStorageService.get('game');
 	}
 	
-	var timer = setInterval(function() {Game.tick(100); $scope.$apply()}, 100);
+	var timer = setInterval(function(){
+		Game.tick(100);
+		
+		$scope.showWarning = Game.model.milkQty >= 5;
+		
+		$scope.$apply()
+	}, 100);
 	
   });

@@ -36,7 +36,9 @@ var app = angular
 
         angular.extend($popoverProvider.defaults, {
             animation: 'am-flip-x',
-            trigger: 'hover'
+            trigger: 'hover',
+			placement: 'right',
+			container: 'body'
         });
 
 

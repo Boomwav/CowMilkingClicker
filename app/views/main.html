@@ -1,21 +1,32 @@
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-sm-4">
 		<p>Money: {{game.model.money}}</p>
 		<p>Milk Qty: {{game.model.milkQty | number: 2}}</p>
 		<p>Cows: {{game.model.nbCows}}</p>
+		
+		<div ng-show="showWarning">
+			More than 5 milk! Holy crap!
+		</div>
 	</div>
 	
-	<div class="col-md-4">
-		<p><button class="btn" ng-Click="game.addMilk(1)" data-placement="right" title="Add Milk" data-template="views/popover/actionPopover.html" bs-popover>Add Milk</button></p>
-		<p><button class="btn" ng-Click="game.addCow(1)">Add a Cow</button></p>
-		<p><button class="btn" ng-Click="game.addCow(2)">Add two Cows</button></p>
-		<p><button class="btn" ng-Click="game.addSellerContract(10,1)">Hire Delivery Boy</button></p>
+	<div class="col-sm-4">
+		<div class="row">
+			<div class="col-md-6">
+				<button class="btn btn-default btn-block" ng-Click="game.addMilk(1)" data-title="Add Milk" data-template="views/popover/actionPopover.html" bs-popover>Add Milk</button>
+			</div>
+			<div class="col-md-6">
+				<button class="btn btn-default btn-block" ng-Click="game.addCow(1)" data-title="Buy a cow" data-template="views/popover/actionPopover.html" bs-popover>Add a Cow</button>
+			</div>
+		</div>
+		
+		<p><button class="btn btn-default btn-block" ng-Click="game.addCow(2)">Add two Cows</button></p>
+		<p><button class="btn btn-default btn-block" ng-Click="game.addSellerContract(10,1)">Hire Delivery Boy</button></p>
 		<br><br>
-		<p><button class="btn" ng-Click="save()">Save</button></p>
-		<p><button class="btn" ng-Click="load()">Load</button></p>
+		<p><button class="btn btn-default btn-block" ng-Click="save()">Save</button></p>
+		<p><button class="btn btn-default btn-block" ng-Click="load()">Load</button></p>
 	</div>
 	
-	<div class="col-md-4">
+	<div class="col-sm-4">
 		<ul class="log-animate-container">
 			<li class="animate-repeat" ng-repeat="message in log.messages | reverse">
 				{{message.text}}
