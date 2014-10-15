@@ -23,6 +23,9 @@ module.exports = function(config) {
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-touch/angular-touch.js',
+      "bower_components/angular-local-storage/dist/angular-local-storage.js",
+       "bower_components/angular-strap/dist/angular-strap.js",
+       "bower_components/angular-strap/dist/angular-strap.tpl.js",
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js'

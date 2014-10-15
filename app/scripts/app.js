@@ -15,9 +15,10 @@ var app = angular
 	'ngRoute',
 	'ngTouch',
 	'mgcrea.ngStrap',
+    'mgcrea.ngStrap.popover',
 	'LocalStorageModule'
 	])
-	.config(function ($routeProvider, localStorageServiceProvider) {
+	.config(function ($routeProvider, localStorageServiceProvider, $popoverProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: 'views/main.html',
@@ -31,5 +32,12 @@ var app = angular
 				redirectTo: '/'
 			});
 		  
-		localStorageServiceProvider.setPrefix('cowMilkingClickerApp');		
+		localStorageServiceProvider.setPrefix('cowMilkingClickerApp');
+
+        angular.extend($popoverProvider.defaults, {
+            animation: 'am-flip-x',
+            trigger: 'hover'
+        });
+
+
 	});
