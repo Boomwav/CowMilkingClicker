@@ -1,8 +1,19 @@
 <div class="row">
 	<div class="col-sm-4">
-		<p>Money: {{game.money}}</p>
-		<p>Milk Qty: {{game.milkQty | number: 2}}</p>
-		<p>Cows: {{game.nbCows}}</p>
+        <table>
+            <tr>
+                <td>Money:</td>
+                <td>{{game.money | currency}}</td>
+            </tr>
+            <tr>
+                <td>Milk Qty:</td>
+                <td>{{game.milkQty | number: 2}}</td>
+            </tr>
+            <tr>
+                <td>Cows: </td>
+                <td>{{game.nbCows}}</td>
+            </tr>
+        </table>
 		
 		<div ng-show="showWarning">
 			More than 5 milk! Holy crap!
