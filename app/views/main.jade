@@ -1,0 +1,63 @@
+.row
+  .col-sm-4
+    table
+      tr
+        td Money:
+        td {{game.money | currency}}
+      tr
+        td Milk Qty:
+        td {{game.milkQty | number: 2}}
+      tr
+        td Cows:
+        td {{game.nbCows}}
+    
+    br
+    
+    div(ng-show="showWarning") More than 5mL of milk! Holy crap!
+
+  .col-sm-4
+    .row
+      .col-md-6
+        button(
+          class='btn btn-default btn-block'
+          ng-click='game.addMilk()'
+          data-title='Milk a cow'
+          data-template='views/popover/actionPopover.html'
+          bs-popover)
+          | Milk a cow
+          
+      .col-md-6
+        button(
+          class='btn btn-default btn-block'
+          ng-click='game.addCow(1)'
+          data-title='Buy a cow'
+          data-template='views/popover/actionPopover.html'
+          bs-popover)
+          |Buy a cow
+
+    .row
+      .col-md-6
+        button(
+          class='btn btn-default btn-block'
+          ng-click='game.addSellerContract(10,1)')
+          |Hire Delivery Boy
+    
+    .row
+      .col-md-6
+        button(
+          class='btn btn-default btn-block'
+          ng-click='save()')
+          |Save
+      .col-md-6
+        button(
+          class='btn btn-default btn-block'
+          ng-click='load()')
+          |Load
+  
+  .col-sm-4
+    ul.log-animate-container
+      li.animate-repeat(ng-repeat="message in log.messages | reverse")
+        div(ng-bind-html="message.text")
+
+
+

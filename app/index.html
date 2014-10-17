@@ -14,7 +14,7 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-	<link rel="stylesheet" href="styles/log.css">
+    <link rel="stylesheet" href="styles/log.css">
     <!-- endbuild -->
   </head>
   <body ng-app="cowMilkingClickerApp">
@@ -67,6 +67,7 @@
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <script src="bower_components/angular-strap/dist/angular-strap.js"></script>
     <script src="bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
@@ -74,18 +75,14 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-		
-		<script src="scripts/filters/reverse.js"></script>
-		
-		<script src="scripts/model/cow.js"></script>
-		
-		<script src="scripts/model/log.js"></script>
-		<script src="scripts/model/game.js"></script>
-		<script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-		
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/filters/reverse.js"></script>
+    <script src="scripts/model/cow.js"></script>
+    <script src="scripts/model/log.js"></script>
+    <script src="scripts/model/game.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <!-- endbuild -->
 </body>
 </html>

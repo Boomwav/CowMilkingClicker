@@ -18,7 +18,7 @@ angular.module('cowMilkingClickerApp').factory 'Cow', ->
             
 			@milkInside = 100
 			@maxMilkInside = 100
-			@milkExpulsionSpeed = 1
+			@milkExpulsionSpeed = 10
 			@milkRegenSpeed = 1
 			@totalMilkProduced = 0
 			
@@ -46,16 +46,5 @@ angular.module('cowMilkingClickerApp').factory 'Cow', ->
 				@hunger = 0
 			if @hunger >= @maxHunger
 				@hunger = @maxHunger
-				
-		tick: (tickTime) ->
-			@tickTime = tickTime
-		
-			if @inPasture()
-				@eat()
-				if not @hungry() then @gotoPen()
-			
-			if @inPen()
-				@digest()
-				if @full() then @gotoPasture()
 					
 				

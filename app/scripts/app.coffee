@@ -12,6 +12,7 @@ app = angular
   .module 'cowMilkingClickerApp', [
     'ngAnimate',
     'ngRoute',
+    'ngSanitize',
     'ngTouch',
     'mgcrea.ngStrap',
     'mgcrea.ngStrap.popover',
